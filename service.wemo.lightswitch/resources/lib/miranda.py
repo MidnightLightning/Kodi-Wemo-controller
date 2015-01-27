@@ -1,23 +1,15 @@
 #!/usr/bin/env python
-################################
-# Interactive UPNP application #
-# Craig Heffner                #
-# www.sourcesec.com            #
-# 07/16/2008                   #
-#
-# Notes from Issac:
-# http://code.google.com/p/miranda-upnp/
-# Marks this file as GPL3 licensed by the author
-# I have made minor modificatinos to get it to work with the wemo
-#
-################################
+
+"""
+Modified version of the Miranda UPNP library
+"""
 
 try:
     import sys,os
     from socket import *
     from urllib2 import URLError, HTTPError
     import xml.dom.minidom as minidom
-    import IN,urllib2
+    import urllib2
     import time
     import struct
     import re
@@ -34,6 +26,11 @@ except Exception,e:
         def log(self, msg):
             print msg
     xbmc = Xbmc()
+
+try:
+    import IN
+except Exception,e:
+    IN = False
 
 
 #Most of the cmdCompleter class was originally written by John Kenyan
@@ -120,7 +117,7 @@ class upnp:
             self.ssock.setsockopt(SOL_SOCKET,SO_REUSEADDR,1)
 
             # Only bind to this interface
-            if self.IFACE != None:
+            if self.IFACE != None and IN != False:
                 print '\nBinding to interface',self.IFACE,'...\n'
                 self.ssock.setsockopt(SOL_SOCKET,IN.SO_BINDTODEVICE,struct.pack("%ds" % (len(self.IFACE)+1,), self.IFACE))
                 self.csock.setsockopt(SOL_SOCKET,IN.SO_BINDTODEVICE,struct.pack("%ds" % (len(self.IFACE)+1,), self.IFACE))
