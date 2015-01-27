@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+   <setting label="32001" type="text" id="hostname" default="192.168.1.10"/>
+   <setting label="32002" type="bool" id="onPlayBackStarted" default="true"/>
+   <setting label="32003" type="bool" id="onPlayBackStopped" default="true"/>
+   <setting label="32004" type="bool" id="onPlayBackEnded" default="true"/>
+   <setting label="32005" type="bool" id="onPlayBackPaused" default="true"/>
+   <setting label="32006" type="bool" id="onPlayBackResumed" default="true"/>
+   <setting type="sep"/>
+   <setting label="32007" type="bool" id="disableOn" default="false"/>
+   <setting label="32008" type="enum" id="fromTime" subsetting="true" enable="eq(-1,true)" default="6" values="12:00 a.m.|1:00 a.m.|2:00 a.m.|3:00 a.m.|4:00 a.m.|5:00 a.m.|6:00 a.m.|7:00 a.m.|8:00 a.m.|9:00 a.m.|10:00 a.m.|11:00 a.m.|12:00 p.m.|1:00 p.m.|2:00 p.m.|3:00 p.m.|4:00 p.m.|5:00 p.m.|6:00 p.m.|7:00 p.m.|8:00 p.m.|9:00 p.m.|10:00 p.m.|11:00 p.m."/>
+   <setting label="32009" type="enum" id="toTime" subsetting="true" enable="eq(-2,true)" default="18" values="12:00 a.m.|1:00 a.m.|2:00 a.m.|3:00 a.m.|4:00 a.m.|5:00 a.m.|6:00 a.m.|7:00 a.m.|8:00 a.m.|9:00 a.m.|10:00 a.m.|11:00 a.m.|12:00 p.m.|1:00 p.m.|2:00 p.m.|3:00 p.m.|4:00 p.m.|5:00 p.m.|6:00 p.m.|7:00 p.m.|8:00 p.m.|9:00 p.m.|10:00 p.m.|11:00 p.m."/>
+</settings>
